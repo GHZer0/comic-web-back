@@ -1,0 +1,109 @@
+.up_form {
+  width:80%;
+  background-color:white;
+  height:auto;
+  margin:0 10% 0 10%;
+  position:relative;
+  border-radius:5px;
+}
+@media only screen and (max-width: 600px){
+  .up_form {
+    width:100%;
+	margin:0;
+  }
+}
+.up_form>form,.up_form>form>ul {
+  width:100%;
+  height:auto;
+ /* display:flex;
+  flex-flow:row wrap;*/
+  list-style:none;
+  text-align:left;
+  background-color:white;
+}
+.up_form>form>ul>li {
+  width:100%;
+  height:auto;
+ /* padding:0 0 0 1%;*/
+  display:flex;
+  flex-flow:row wrap;
+  margin:1% 0 10px 0;
+}
+.up_form>form>div {
+  width:100%;
+  height:200px;
+  background-color:white;
+}
+.up_form>form>div>textarea {
+  width:65%;
+  height:100%;
+  box-shadow:2px 2px 6px 0 rgba(0,0,0,0.12);
+  overflow-y:auto;
+  overflow-x:hidden;
+  resize:none;
+  margin:0 0 0 1%;
+}
+@media only screen and (max-width: 600px){
+  .up_form>form>div>textarea {
+    width:96%;  
+	margin:0;
+  }
+}
+.up_form>input {
+  width:30%;
+  height:auto;
+  background-color:white;
+  cursor:pointer;
+  border-radius:3px;
+  box-shadow:6px 6px 2px 0 rgba(0,0,0,0.2), 0px 6px 10px 0 rgba(0,0,0,0.19);
+  margin:10px 0 10px 0;
+
+}
+.up_form>input:active {
+  box-shadow:6px 6px 2px 0 rgba(0,0,0,0.2) inset, 0px 6px 10px 0 rgba(0,0,0,0.19) inset;
+}
+.up_form>form>ul>li>span {
+  width:25%;
+  height:auto;
+  text-align:center;
+  border-radius:3px;
+  background-color:inherit;
+  box-shadow:0px 4px 2px 0 rgba(0,0,0,0.2), 0px 3px 10px 0 rgba(0,0,0,0.19);
+  padding:2px 0 2px 0;
+}
+.up_form>form>ul>li:nth-last-child(odd) {
+  color:#fc8d4d;
+}
+.up_form>form>ul>li:nth-last-child(even) {
+  color:#8171ff;
+}
+.up_form>form>ul>li>input,.up_form>form>ul>li>select {
+  margin:0 1%  0 1%;
+  width:70%;;height:auto;
+  overflow:scroll;
+}
+.up_form>form>ul>li>select {
+  width:auto;
+}
+.up_form>form>ul>li>input[type=number] {
+  width:15%;
+}
+#up_before {
+  visibility:hidden;
+}
+
+.up_form>form>ul>li:nth-last-child(odd) input {
+  border:1px dotted #fc8d4d;
+}
+.up_form>form>ul>li:nth-last-child(even) input {
+  border:1px dotted #8171ff;
+}
+
+#main_file>ul>li>input {
+  cursor:pointer;
+  overflow:hidden;
+}
+.up_footer {
+  width:100%;
+  height:200px;
+}
