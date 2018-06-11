@@ -16,7 +16,7 @@ require "../../backstage/ToMysql.php";
 require "../../backstage/postBaseVar.php";
 require "../../backstage/comicInfo.php";
 require "../../backstage/spCopyIndex.php";
-require "../../backstage/comicMysqlInsert.php";
+require "../../backstage/insertInfo.php";
 //-------------------------------------------------
 
 
@@ -127,7 +127,9 @@ echo "main_file_store";print_r($main_file_store_path);echo "<br>";
 echo "catgory_store_path : $catgory_store_path <br>";
 echo "last_hua : $last_hua <br>";
 
-
+if(!insertInfo("localhost","root","root","comic_store")){
+	die("Insert info unsuccess");
+}
 
 
 

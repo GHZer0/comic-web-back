@@ -88,7 +88,7 @@ $catgory_store_path = "";
 //$main_file_base_path = "";
 $main_file_store_path = array();							   //数据库位置time time_path
 //$main_file_times_path = "";
-$hua_path = ""; //暂时不用
+$hua_path = "";
 
 
 //---------------switch------------------------

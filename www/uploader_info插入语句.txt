@@ -1,0 +1,14 @@
+replace into uploader_info (
+uploader,
+title_or,
+title_zh,
+title_en,
+hua_path
+)
+values(
+"§¢§√§’§°",
+"¥”»®",
+"aha",
+"laozi",
+"/comic_store/fuck/_1_hua"
+);

@@ -1,0 +1,34 @@
+create table comic_info(
+title_or varchar(110) UNIQUE not null,
+title_zh varchar(110) UNIQUE not null,
+title_en varchar(110)  UNIQUE not null,
+author varchar(110) not null,
+company varchar(600) not null,
+country varchar(600) not null,
+start_year int not null,
+end_year int,
+status varchar(255) not null,
+modify varchar(600) not null,
+type01 varchar(255) not null,
+type02 varchar(255) not null,
+type03 varchar(255) not null,
+details varchar(999) not null,
+base_path varchar(500) not null,
+show_store_path varchar(500) not null,
+catgory_store_path varchar(501) not null,
+last_hua int not null,
+last_upload_time timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(title_or,title_zh,title_en)
+);
+
+
+create table uploader_info(
+uploader varchar(110) not null,
+title_or varchar(110) not null,
+title_zh varchar(110) not null,
+title_en varchar(110) not null,
+hua int not null,
+hua_path varchar(110) not null,
+upload_time timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY(uploader,title_or,hua_path)
+);
