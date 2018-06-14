@@ -5,7 +5,7 @@ function postBaseVar()
 	$GLOBALS["title_zh"] = $_POST["title_zh"];
 	$GLOBALS["title_en"] = $_POST["title_en"];
 
-	$GLOBALS["sp"] = $_POST["sp"];
+	//$GLOBALS["sp"] = $_POST["sp"];
 	$GLOBALS["before"] = $_POST["before"];
 
 	$GLOBALS["after"] = $_POST["after"];
@@ -43,7 +43,7 @@ function postBaseVar()
 							"title_zh",
 							"title_en",
 
-							"sp",
+							//"sp",
 							"before",
 
 							"after",
@@ -121,11 +121,16 @@ function postBaseVar()
 			{
 				if($GLOBALS["status"] === 'end')
 				{
-					if($GLOBALS['end_year'] > date("Y"))
+					if(!intval($GLOBALS['end_year']))
+					{
+						die('end year is not int');
+					}
+					else if($GLOBALS['end_year'] > date("Y"))
 					{
 						die("end_year bigger than now");
-					}
-					else if($GLOBALS['end_year'] < $GLOBALS['start_year'])
+					}else{}
+					
+					if($GLOBALS['end_year'] < $GLOBALS['start_year'])
 					{
 						die('end_year is smaller than start_year');
 					}else{continue;}

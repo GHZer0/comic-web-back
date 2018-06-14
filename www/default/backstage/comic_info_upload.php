@@ -4,6 +4,7 @@
 require "../../backstage/base_var.php";
 //基础变量操作
 require "../../kvs/enstr.php";
+//require "../../kvs/kvsStr.php";
 require "../../backstage/output.php";
 //--------require--------------------------
 
@@ -61,7 +62,7 @@ else
 	echo "Line 59 else<br>";
 }
 */
-//输出数据查看
+
 
 $error_spCopyIndex = spCopyIndex($GLOBALS['base_path'],$GLOBALS['main_file_store_path'],"..","..");
 
@@ -71,10 +72,11 @@ if(!$error_spCopyIndex)
 }
 else
 {
-	echo "Line 71";
+	//echo "Line 71";
 }
 
-
+//输出数据查看
+/*
 echo "基础数据：<br/>";
 echo "title_or : $title_or <br>";
 echo "title_zh : $title_zh <br>";
@@ -126,8 +128,8 @@ echo "show_store_path : $show_store_path <br>";
 echo "main_file_store";print_r($main_file_store_path);echo "<br>";
 echo "catgory_store_path : $catgory_store_path <br>";
 echo "last_hua : $last_hua <br>";
-
-if(!insertInfo("localhost","root","root","comic_store")){
+*/
+if(!insertInfo($data_host_kvs,$data_base_usr_name_kvs,$data_base_passwd_kvs,$data_base_name_kvs)){
 	die("Insert info unsuccess");
 }
 

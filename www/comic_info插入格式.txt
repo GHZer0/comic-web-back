@@ -36,6 +36,6 @@ values(
 "/comic_store/fuck",
 "/comic_store/fuck/oo.jpg",
 "/comic_store/fuck/index.php",
-3
+"_3_hua"
 )
 

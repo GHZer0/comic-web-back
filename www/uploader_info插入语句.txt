@@ -3,6 +3,7 @@ uploader,
 title_or,
 title_zh,
 title_en,
+hua,
 hua_path
 )
 values(
@@ -10,5 +11,6 @@ values(
 "¥”»®",
 "aha",
 "laozi",
+"_1_hua",
 "/comic_store/fuck/_1_hua"
 );

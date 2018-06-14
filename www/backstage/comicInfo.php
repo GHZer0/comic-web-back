@@ -40,7 +40,9 @@ function comicInfo($arg4,$arg1,$arg2="./temp",$arg3=".")
 	}else{}
 
 	//------temp操作-----------------------------------------------------------------------------------------------------------------------
-
+	$main_file_md5 = $main_file_handler->tmpFileMd5();
+	//echo $main_file_md5."<br>";
+	
 	$temp_main_file_path = $temp_base_path."/".$main_file_md5;		// "./temp/md5#####"
 
 	if(!file_exists($temp_main_file_path))
@@ -141,7 +143,16 @@ function comicInfo($arg4,$arg1,$arg2="./temp",$arg3=".")
 			$main_file_deal->deleteDir($full_main_file_store_path."/".$main_file_list[$i],true);
 		}else{}
 		
+		//$temp_mv_rm = exec("rm -rf"." ".$full_main_file_store_path);//删除原重复文件夹
+
 		$temp_mv = exec("sudo mv -f ".$full_temp_main_file_path." ".$full_main_file_store_path);
+
+		/*
+		echo "----------------full_main_file_store_path-------------------<br>-";
+		echo $full_main_file_store_path."<br>";
+		echo "<br>";
+		echo "---------------------------------------------------------<br>";
+		*/
 
 		//--------------------------
 

@@ -25,7 +25,7 @@ function spCopyIndex($arg1,$arg2,$arg3,$arg4)
 	{}
 	else
 	{
-		die("catgory copy fail");
+		die("spCopyIndex catgory copy fail");
 	}
 
 	$count = count($my_main_file_store_path);
@@ -41,7 +41,7 @@ function spCopyIndex($arg1,$arg2,$arg3,$arg4)
 		}
 		else
 		{
-			die("read_page copy fail in $i ");
+			die("spCopyIndex read_page copy fail in $i ");
 		}
 	}
 
@@ -50,17 +50,19 @@ function spCopyIndex($arg1,$arg2,$arg3,$arg4)
 	//------------É¨Ãèlast_hua----
 	$scan_last_hua = new FileDeal($arg4."/".$arg1);
 
-	$last_hua_name = end($scan_last_hua->addFolderList());
-	$last_hua_num = intval(explode("_",$last_hua_name)[1]);
+	$last_hua_name_temp = $scan_last_hua->addFolderList();
+	$last_hua_name = end($last_hua_name_temp);
+	//$last_hua_num = intval(explode("_",$last_hua_name)[1]);
+	//echo $last_hua_name."<br>";
 
 	
 	
-	if(!$last_hua_num)
+	if(!$last_hua_name)
 	{
-		die("get last hua unsuccess");
+		die("spCopyIndex get last hua unsuccess spCopy line 62");
 	}else{};
 
-	$GLOBALS['last_hua'] = $last_hua_num;
+	$GLOBALS['last_hua'] = $last_hua_name;
 
 	
 	return true;

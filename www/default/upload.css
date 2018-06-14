@@ -88,9 +88,7 @@
 .up_form>form>ul>li>input[type=number] {
   width:15%;
 }
-#up_before {
-  visibility:hidden;
-}
+
 
 .up_form>form>ul>li:nth-last-child(odd) input {
   border:1px dotted #fc8d4d;

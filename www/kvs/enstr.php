@@ -3,10 +3,18 @@
   class FuckStr 
   {
 	  
+	 
+	  var $str;
 
+	  function __construct($arg1)
+	  {
+		  $this->str = $arg1;
+	  }
+	  
 	  private function fuck()
 	  {
-		  $bitch_str = "root";
+		  $bitch_str = $this->str;
+
 		  $x = str_split($bitch_str);
 		  array_unshift($x,"ldgjlro;aj;bkj;algjei;oa");//24
 		  array_push($x,"uwrokljdfnkzl;w/l.gzsd;olirw");//28
@@ -39,5 +47,23 @@
 	  }
 
   }
+/*
+  echo "-------------------KVS------------------<br>";
+  $data_host = new FuckStr("localhost");
+  echo $data_host_kvs = $data_host->output();
+  echo "<br>";
+  
+  $data_base_usr_name = new FuckStr("root");
+  echo $data_base_usr_name_kvs = $data_base_usr_name->output();
+  echo "<br>";
 
-?>
+  $data_base_passwd = new FuckStr("root");
+  $data_base_passwd_kvs = $data_base_passwd->output();
+  echo "<br>";
+
+  $data_base_name = new FuckStr("comic_store");
+  echo $data_base_name_kvs = $data_base_name->output();
+  echo "<br>";
+  echo "--------------------------------------<br>";
+  */
+  ?>

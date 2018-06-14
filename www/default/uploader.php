@@ -15,17 +15,17 @@
  <?php include "./head.php"; ?>
 
    <div id="form_post" class="up_form full_shadow out_radius inline-block">
-     <form action="./backstage/comic_info_upload.php" method="post" id="main_info" enctype="multipart/form-data" autocomplete="off">
+     <form action="./backstage/comic_info_upload.php" method="post" id="main_info" enctype="multipart/form-data">
 	   <ul id="file_info"><!-- 上传文件信息 -->
 	     <li><span>抬头源:</span><input type="text" name="title_or" placeholder="must"/></li>
 	     <li><span>抬头中文:</span><input type="text" name="title_zh" placeholder="must"/></li>
 	     <li><span>抬头英文或拼音:</span><input type="text" name="title_en" placeholder="must"/></li>
 		 <li>
-		   <span>是否特别</span>
+		   <!-- <span>是否特别</span>
 		   <select name="sp">
 		     <option selected value="false">否</option>
 			 <option value="true">是</option>
-		   </select>
+		   </select> -->
 		 <li  id="up_before"><span>前缀</span>
 		   <select name="before">
 		     <option selected value="">第</option>
@@ -60,7 +60,7 @@
 		 </li>
 		 <li>
 		   <span>起始年份:</span><input type="number" name="start_year" placeholder="must"/>
-		   <span>终止年份:</span><input type="number" name="end_year" placeholder="状态为连载则非必需"/>
+		   <span>终止年份:</span><input type="text" name="end_year" placeholder="状态为连载则非必需" style="width:15%;"/>
 		 </li>
 		 <li>
 		   <span>状态</span>

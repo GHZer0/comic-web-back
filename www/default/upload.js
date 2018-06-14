@@ -1,5 +1,6 @@
 
 //前缀选择显示
+/*
 $(document).ready(function(){
   $("[name='sp']").change(function(){
   var sp = $(this).val();
@@ -16,6 +17,7 @@ $(document).ready(function(){
   });
 }
 );
+*/
 //json
 /*
 $(document).ready(function(){

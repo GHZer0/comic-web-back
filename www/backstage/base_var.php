@@ -4,7 +4,7 @@ $title_or = "";
 $title_zh = "";
 $title_en = "";
 
-$sp = false;
+//$sp = false;
 $before = "";
 
 $after = "";
@@ -18,7 +18,7 @@ $company = "";
 $country = "";
 $start_year = 0;
 
-$end_year = 0;
+$end_year = "";
 $status = "false";
 
 $modify = "";

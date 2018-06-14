@@ -16,7 +16,7 @@ details varchar(999) not null,
 base_path varchar(500) not null,
 show_store_path varchar(500) not null,
 catgory_store_path varchar(501) not null,
-last_hua int not null,
+last_hua varchar(255) not null,
 last_upload_time timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY(title_or,title_zh,title_en)
 );
@@ -27,7 +27,7 @@ uploader varchar(110) not null,
 title_or varchar(110) not null,
 title_zh varchar(110) not null,
 title_en varchar(110) not null,
-hua int not null,
+hua varchar(110) not null,
 hua_path varchar(110) not null,
 upload_time timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY(uploader,title_or,hua)

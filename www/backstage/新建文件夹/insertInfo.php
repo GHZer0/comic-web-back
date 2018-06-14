@@ -7,7 +7,7 @@ function insertInfo($server_name,$usr_name,$passwd,$dbname)
 	
 	if($conn->connect_error)
 	{
-		die("insertInfo Connect error : ".$conn->connect_error);
+		die("Connect error : ".$conn->connect_error);
 	}
 	else{}
 
@@ -16,10 +16,7 @@ function insertInfo($server_name,$usr_name,$passwd,$dbname)
 
 	//comic_info
 	//echo "line 18";
-	//print_r($GLOBALS['end_year']);
-	//echo "<br>-------------<br>";
-
-	if($GLOBALS['end_year'] == "")
+	if(!is_int($GLOBALS['end_year']))
 	{
 		$sql_comic_info = '
 		replace into comic_info (
@@ -106,6 +103,8 @@ function insertInfo($server_name,$usr_name,$passwd,$dbname)
 
 
 	//print_r($GLOBALS['end_year']);echo "whaft___________.<br>";
+
+
 	//echo $sql_comic_info."<br>";
 
 	if($conn->query($sql_comic_info)=== true)
@@ -115,7 +114,7 @@ function insertInfo($server_name,$usr_name,$passwd,$dbname)
 	else
 	{
 		$conn->query("ROLLBACK");
-		die("insertInfo insert comic info fail:".$conn->error);
+		die("insert comic info fail:".$conn->error);
 	}
 
 	//echo "I am after line 60<br>";
@@ -126,16 +125,14 @@ function insertInfo($server_name,$usr_name,$passwd,$dbname)
 	for($i = 0;$i<$count_main_file_store_path;$i++)
 	{
 		$hua_temp_temp = explode("/",$GLOBALS['main_file_store_path'][$i]);
-		$hua_temp = end($hua_temp_temp);
+		$hua_temp = intval(explode("_",end($hua_temp_temp))[1]);
 
-		/*
-		if($hua_temp)
+		if(is_int($hua_temp) || $hua_temp === 0)
 		{}
 		else
 		{
-			die("insertInfo hua temp have error");
+			die("hua temp have error");
 		}
-		*/
 
 		$sql_uploader = '
 		replace into uploader_info (
@@ -150,7 +147,7 @@ function insertInfo($server_name,$usr_name,$passwd,$dbname)
 		'"'.$GLOBALS['title_or'].'"'.','.' '.
 		'"'.$GLOBALS['title_zh'].'"'.','.' '.
 		'"'.$GLOBALS['title_en'].'"'.','.' '.
-		'"'.$hua_temp.'"'.','.' '.
+		$hua_temp.','.' '.
 		'"'.$GLOBALS['main_file_store_path'][$i].'"'.' '.');';
 
 		//echo $sql_uploader."<br>";
@@ -162,7 +159,7 @@ function insertInfo($server_name,$usr_name,$passwd,$dbname)
 		else
 		{
 			$conn->query("ROLLBACK");
-			die("insertInfo Insert into uploader fail : ".$conn->error." in ".$i);
+			die("Insert into uploader fail : ".$conn->error." in ".$i);
 		}
 
 	}
